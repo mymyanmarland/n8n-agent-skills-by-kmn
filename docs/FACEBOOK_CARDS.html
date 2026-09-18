@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Facebook Card - n8n Agent Skills by KMN</title>
+<style>
+  body { margin: 0; padding: 24px; background: #1a1d29; font-family: -apple-system, sans-serif; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .card {
+    width: 1200px; height: 630px;
+    background: linear-gradient(135deg, #1a1d29 0%, #2d1b3d 50%, #3d1a52 100%);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .grain { position: absolute; inset: 0; opacity: 0.05; pointer-events: none;
+           background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+           background-size: 24px 24px; }
+  .blob1 { position: absolute; width: 400px; height: 400px; border-radius: 50%;
+           background: radial-gradient(circle, #ff6d5a 0%, transparent 70%);
+           opacity: 0.3; top: -100px; right: -100px; }
+  .blob2 { position: absolute; width: 500px; height: 500px; border-radius: 50%;
+           background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+           opacity: 0.25; bottom: -150px; left: -150px; }
+  .blob3 { position: absolute; width: 300px; height: 300px; border-radius: 50%;
+           background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+           opacity: 0.2; top: 40%; left: 50%; transform: translate(-50%, -50%); }
+  .content { position: relative; z-index: 2; padding: 64px 80px; color: white; height: 100%; box-sizing: border-box; }
+  .badge-row { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .badge { padding: 8px 16px; border-radius: 100px; font-size: 16px; font-weight: 600;
+           background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+  .badge.mm { background: rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.4); }
+  .badge.n8n { background: rgba(255, 109, 90, 0.3); border-color: #ff6d5a; }
+  .title { font-size: 88px; font-weight: 800; line-height: 1; margin: 16px 0 12px;
+           background: linear-gradient(90deg, #fff 0%, #ff6d5a 100%);
+           -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { font-size: 28px; color: rgba(255,255,255,0.85); margin-bottom: 32px; font-weight: 400; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+  .col { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+         border-radius: 12px; padding: 20px; backdrop-filter: blur(10px); }
+  .col-head { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #ff6d5a; }
+  .col-item { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 4px 0; }
+  .footer { position: absolute; bottom: 32px; left: 80px; right: 80px;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 16px; color: rgba(255,255,255,0.6); }
+  .footer-url { font-family: ui-monospace, monospace; }
+  .icons { display: flex; gap: 16px; align-items: center; }
+  .icon-circle { width: 48px; height: 48px; border-radius: 50%;
+                 background: rgba(255,255,255,0.1); display: flex; align-items: center;
+                 justify-content: center; font-size: 24px; border: 1px solid rgba(255,255,255,0.2); }
+  .quote { font-style: italic; font-size: 22px; color: rgba(255,255,255,0.9);
+           border-left: 4px solid #ff6d5a; padding-left: 20px; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<div class="row">
+  <!-- CARD 1: Hero -->
+  <div class="card" id="card1">
+    <div class="grain"></div>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="content">
+      <div class="badge-row">
+        <span class="badge">⚡ Cursor Agent Skill</span>
+        <span class="badge n8n">🍕 n8n Workflows</span>
+        <span class="badge mm">🇲🇲 Burmese-first</span>
+      </div>
+      <div class="title">n8n Agent Skills<br>by KMN</div>
+      <div class="subtitle">Production-grade Cursor Skills for Claude · Telegram · RSS · Docker</div>
+      <div class="grid">
+        <div class="col">
+          <div class="col-head">🤖 BUILD</div>
+          <div class="col-item">• Telegram bots (Burmese)</div>
+          <div class="col-item">• RSS digest channels</div>
+          <div class="col-item">• Scheduled posts</div>
+          <div class="col-item">• Chat assistants</div>
+        </div>
+        <div class="col">
+          <div class="col-head">🧰 TOOLS</div>
+          <div class="col-item">• Builder · Validator</div>
+          <div class="col-item">• Auditor · Bot-checker</div>
+          <div class="col-item">• 4 reference docs</div>
+          <div class="col-item">• 2 templates</div>
+        </div>
+        <div class="col">
+          <div class="col-head">🔐 SAFE</div>
+          <div class="col-item">• Secret-safe</div>
+          <div class="col-item">• Local-first</div>
+          <div class="col-item">• Tunnel narrow route</div>
+          <div class="col-item">• Zero deps · Node 20+</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="icons">
+          <div class="icon-circle">🤖</div>
+          <div class="icon-circle">📡</div>
+          <div class="icon-circle">📨</div>
+          <div class="icon-circle">🧠</div>
+          <div class="icon-circle">⚙️</div>
+        </div>
+        <div class="footer-url">github.com/mymyanmarland/n8n-agent-skills-by-kmn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- CARD 2: Burmese quote -->
+  <div class="card" id="card2">
+    <div class="grain"></div>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="content">
+      <div class="badge-row">
+        <span class="badge mm">🇲🇲 Burmese-first</span>
+        <span class="badge n8n">🍕 n8n + Cursor</span>
+      </div>
+      <div style="font-size: 96px; margin: 24px 0;">မြန်မာလို မေးလိုက်ပါ</div>
+      <div class="subtitle">Just ask in Burmese. The agent understands.</div>
+      <div class="quote">
+        "Telegram trigger bot တစ်ခု လုပ်ပေးပါ - Claude သုံးပြီး မြန်မာလို reply ပြန်၊ ၃၅၀၀ လိုင်း safe chunking ပါစေ"
+      </div>
+      <div class="grid">
+        <div class="col">
+          <div class="col-head">📚 ပညာရှိ</div>
+          <div class="col-item">SKILL.md auto-load လုပ်မယ်</div>
+          <div class="col-item">Builder script ထုတ်ပေးမယ်</div>
+          <div class="col-item">Validator run ပါမယ်</div>
+        </div>
+        <div class="col">
+          <div class="col-head">⚡ မြန်ဆန်</div>
+          <div class="col-item">60 seconds install</div>
+          <div class="col-item">Zero dependencies</div>
+          <div class="col-item">Local-first Docker</div>
+        </div>
+        <div class="col">
+          <div class="col-head">🔐 လုံခြုံ</div>
+          <div class="col-item">API key မရေးပါ</div>
+          <div class="col-item">Bot token မရေးပါ</div>
+          <div class="col-item">Tunnel narrow route</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-url" style="font-size: 18px;">github.com/mymyanmarland/n8n-agent-skills-by-kmn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- CARD 3: Architecture -->
+  <div class="card" id="card3">
+    <div class="grain"></div>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="content">
+      <div class="badge-row">
+        <span class="badge">🏗️ Architecture</span>
+        <span class="badge n8n">🍕 How it works</span>
+      </div>
+      <div class="title" style="font-size: 56px;">Cursor → n8n → Telegram</div>
+      <div class="subtitle">End-to-end flow with Cloudflare Tunnel gateway</div>
+      <pre style="font-family: ui-monospace, monospace; font-size: 14px; line-height: 1.5;
+                  background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px;
+                  color: #a8dadc; border: 1px solid rgba(255,255,255,0.1); overflow: hidden;">
+  ┌──────────────────┐
+  │  Cursor Agent    │  ← SKILL.md auto-loads
+  │  Claude / GPT    │
+  └────────┬─────────┘
+           │ generates JSON
+           ▼
+  ┌──────────────────┐    ┌──────────────────┐
+  │  n8n (Docker)    │───▶│  Claude Agent    │
+  │  localhost:5678  │    │  + Memory        │
+  └────────┬─────────┘    └────────┬─────────┘
+           │                       │
+           ▼                       ▼
+  ┌──────────────────┐    ┌──────────────────┐
+  │  Reserve→Send    │───▶│  Telegram Bot    │
+  │  Confirm guard   │    │  + Channel       │
+  └──────────────────┘    └──────────────────┘
+           ▲
+           │ HTTPS only - Telegram route
+           │
+  ┌──────────────────┐    ┌──────────────────┐
+  │  Cloudflare      │───▶│  nginx gateway   │
+  │  Quick-Tunnel    │    │  (narrow route)  │
+  └──────────────────┘    └──────────────────┘</pre>
+      <div class="footer">
+        <div class="footer-url">github.com/mymyanmarland/n8n-agent-skills-by-kmn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- CARD 4: Stats -->
+  <div class="card" id="card4">
+    <div class="grain"></div>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="content">
+      <div class="badge-row">
+        <span class="badge">📊 Built on real data</span>
+        <span class="badge n8n">🍕 18,070 templates scanned</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center;
+                  flex-direction: column; height: 60%; margin: 20px 0;">
+        <div style="font-size: 200px; font-weight: 900; line-height: 1;
+                    background: linear-gradient(90deg, #ff6d5a 0%, #a855f7 100%);
+                    -webkit-background-clip: text; -webkit-text-fill-color: transparent;">18,070</div>
+        <div style="font-size: 32px; color: rgba(255,255,255,0.8); margin-top: 8px;">n8n templates scanned</div>
+      </div>
+      <div class="grid">
+        <div class="col"><div class="col-head">8</div><div class="col-item">production workflows</div></div>
+        <div class="col"><div class="col-head">728</div><div class="col-item">node types</div></div>
+        <div class="col"><div class="col-head">77</div><div class="col-item">categories</div></div>
+      </div>
+      <div class="col" style="margin-top: 16px;">
+        <div style="font-size: 18px; text-align: center; color: rgba(255,255,255,0.85);">
+          Burmese-first documentation · Secret-safe · Local-first
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-url">github.com/mymyanmarland/n8n-agent-skills-by-kmn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
