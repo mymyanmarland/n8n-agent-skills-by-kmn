@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate skill package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate example chat workflow
+        run: |
+          node n8n-myanmar-workflow-builder/scripts/validate-workflow.cjs \
+            n8n-myanmar-workflow-builder/examples/chat-claude.json
+      - name: Validate example scheduled workflow
+        run: |
+          node n8n-myanmar-workflow-builder/scripts/validate-workflow.cjs \
+            n8n-myanmar-workflow-builder/examples/scheduled-telegram-channel.json
+      - name: Audit credentials
+        run: |
+          node n8n-myanmar-workflow-builder/scripts/audit-credentials.cjs n8n-myanmar-workflow-builder/
+      - name: Smoke-test builder (chat-local)
+        run: |
+          node n8n-myanmar-workflow-builder/scripts/build-workflow.cjs \
+            --template chat-local \
+            --name "Smoke test chat" \
+            > /tmp/smoke.json
+          node n8n-myanmar-workflow-builder/scripts/validate-workflow.cjs /tmp/smoke.json
+      - name: Smoke-test builder (chat-telegram)
+        run: |
+          node n8n-myanmar-workflow-builder/scripts/build-workflow.cjs \
+            --template chat-telegram \
+            --name "Smoke test telegram" \
+            > /tmp/smoke.json
+          node n8n-myanmar-workflow-builder/scripts/validate-workflow.cjs /tmp/smoke.json

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local n8n data (NEVER commit)
+n8n_data/
+.env
+.env.telegram
+.env.local
+
+# Backups are part of the live project, not the public repo
+backups/
+
+# Temporary files
+.tmp-*
+*.tmp
+
+# Build artifacts
+dist/
+build/

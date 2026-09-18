@@ -1,0 +1,17 @@
+{
+  "name": "Chat Claude - Minimal Template",
+  "nodes": [
+    { "parameters": { "public": false, "options": { "responseMode": "lastNode" } }, "id": "chat-trigger-1", "name": "When chat message received", "type": "@n8n/n8n-nodes-langchain.chatTrigger", "typeVersion": 1.4, "webhookId": "e8c452b7-8d5a-4a7b-bcb8-c26dfc9adfa8", "position": [260, 300] },
+    { "parameters": { "promptType": "auto", "text": "={{ $json.chatInput }}", "options": { "systemMessage": "You are a helpful assistant. Reply in the same language as the user.", "enableStreaming": false } }, "id": "agent-1", "name": "Claude AI Agent", "type": "@n8n/n8n-nodes-langchain.agent", "typeVersion": 3.1, "retryOnFail": true, "maxTries": 3, "waitBetweenTries": 5000, "position": [520, 300] },
+    { "parameters": { "model": { "__rl": true, "mode": "list", "value": "claude-sonnet-5" }, "options": {} }, "id": "model-1", "name": "Anthropic Claude", "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic", "typeVersion": 1.6, "position": [500, 560] },
+    { "parameters": { "sessionIdType": "fromInput", "sessionKey": "={{ $json.sessionId }}", "contextWindowLength": 10 }, "id": "memory-1", "name": "Conversation Memory", "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow", "typeVersion": 1.4, "position": [760, 560] }
+  ],
+  "connections": {
+    "When chat message received": { "main": [[{ "node": "Claude AI Agent", "type": "main", "index": 0 }]] },
+    "Anthropic Claude": { "ai_languageModel": [[{ "node": "Claude AI Agent", "type": "ai_languageModel", "index": 0 }]] },
+    "Conversation Memory": { "ai_memory": [[{ "node": "Claude AI Agent", "type": "ai_memory", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "tags": []
+}

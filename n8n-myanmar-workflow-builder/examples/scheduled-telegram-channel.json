@@ -1,0 +1,19 @@
+{
+  "name": "Scheduled Telegram Channel - Minimal Template",
+  "nodes": [
+    { "parameters": { "rule": { "interval": [{ "field": "cronExpression", "expression": "0 */1 * * *" }] } }, "id": "sched-1", "name": "Every 1 Hour", "type": "n8n-nodes-base.scheduleTrigger", "typeVersion": 1.2, "position": [120, 300] },
+    { "parameters": {}, "id": "manual-1", "name": "Manual Test", "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1, "position": [120, 500] },
+    { "parameters": { "mode": "runOnceForAllItems", "jsCode": "// TODO: Replace with actual content generation logic.\n// For example: fetch RSS, call an LLM, read from a data table.\nreturn [{ json: { text: 'Hello from your scheduled workflow! Update the code node to generate real content.' } }];" }, "id": "gen-1", "name": "Generate Content", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [400, 300] },
+    { "parameters": { "mode": "runOnceForAllItems", "jsCode": "const escapeHtml = (v) => String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');\nconst stripForMeasure = (v) => String(v).replace(/<\\/?[a-zA-Z][^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'\"');\nconst visibleLen = (v) => [...stripForMeasure(v)].length;\nconst text = $input.first().json.text || '';\nif (visibleLen(text) < 300) throw new Error('Content too short (< 300 chars).');\nif (visibleLen(text) > 3900) throw new Error('Content too long (> 3900 chars).');\nconst today = new Intl.DateTimeFormat('my-MM', {timeZone:'Asia/Yangon',year:'numeric',month:'long',day:'numeric'}).format(new Date());\nconst formatted = ['📰 <b>Update — ' + escapeHtml(today) + '</b>','',escapeHtml(text),'','— <i>Sent by n8n</i>'].join('\\n');\nreturn [{ json: { text: formatted } }];" }, "id": "fmt-1", "name": "Format Telegram Message", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [660, 300] },
+    { "parameters": { "resource": "message", "operation": "sendMessage", "chatId": "@MyChannel", "text": "={{ $json.text }}", "additionalFields": { "appendAttribution": false, "parse_mode": "HTML", "disable_web_page_preview": true } }, "id": "send-1", "name": "Send to Telegram", "type": "n8n-nodes-base.telegram", "typeVersion": 1.2, "position": [920, 300] }
+  ],
+  "connections": {
+    "Every 1 Hour": { "main": [[{ "node": "Generate Content", "type": "main", "index": 0 }]] },
+    "Manual Test": { "main": [[{ "node": "Generate Content", "type": "main", "index": 0 }]] },
+    "Generate Content": { "main": [[{ "node": "Format Telegram Message", "type": "main", "index": 0 }]] },
+    "Format Telegram Message": { "main": [[{ "node": "Send to Telegram", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1", "timezone": "Asia/Yangon" },
+  "tags": []
+}
