@@ -62,6 +62,7 @@ n8n-agent-skills-by-kmn/
 └── docs/
     ├── INSTALL.md                               <- how to install in Cursor
     ├── PATTERNS.md                              <- quick pattern index
+    ├── HOW_TO_INVOKE.md                         <- Burmese + English skill invocation guide
     └── WHY.md                                   <- design notes
 ```
 
