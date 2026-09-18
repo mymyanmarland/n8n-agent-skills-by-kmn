@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>README Preview - n8n Agent Skills by KMN</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+           max-width: 980px; margin: 0 auto; padding: 24px; background: #f6f8fa; color: #1f2328; line-height: 1.6; }
+    .markdown-body { background: #ffffff; border: 1px solid #d0d7de; border-radius: 12px; padding: 32px 40px;
+                     box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    h1, h2, h3, h4 { color: #1f2328; font-weight: 600; }
+    h1 { border-bottom: 1px solid #d0d7de; padding-bottom: 8px; }
+    h2 { border-bottom: 1px solid #d0d7de; padding-bottom: 6px; margin-top: 32px; }
+    code { background: #afb8c133; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    pre { background: #f6f8fa; padding: 16px; border-radius: 8px; overflow-x: auto; border: 1px solid #d0d7de; }
+    pre code { background: transparent; padding: 0; }
+    table { border-collapse: collapse; margin: 12px 0; width: 100%; }
+    th, td { border: 1px solid #d0d7de; padding: 8px 12px; text-align: left; }
+    th { background: #f6f8fa; }
+    blockquote { border-left: 4px solid #d0d7de; padding-left: 12px; color: #59636e; margin-left: 0;
+                 background: #f6f8fa; padding: 12px 16px; border-radius: 0 6px 6px 0; }
+    details { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 8px; padding: 8px 12px; margin: 12px 0; }
+    details summary { cursor: pointer; font-weight: 600; }
+    hr { border: none; border-top: 1px solid #d0d7de; margin: 24px 0; }
+    img { max-width: 100%; height: auto; }
+    .badge-row { margin: 8px 0; }
+    .ascii { font-family: ui-monospace, monospace; background: #f6f8fa; padding: 16px; border-radius: 8px;
+             border: 1px solid #d0d7de; white-space: pre; overflow-x: auto; font-size: 0.85em; line-height: 1.2; }
+    .center { text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 12px 0; }
+    .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 12px; background: #ffffff; }
+    .label { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; }
+    .bg-mm { background: #FFD700; color: #1f2328; }
+    .bg-en { background: #3b82f6; color: white; }
+    .toolbar { position: sticky; top: 0; background: rgba(246,248,250,0.95); padding: 8px 0;
+               border-bottom: 1px solid #d0d7de; margin-bottom: 16px; }
+    .toolbar a { margin-right: 12px; color: #0969da; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <strong>📄 Preview:</strong>
+    <a href="#hero">Hero</a>
+    <a href="#what">What</a>
+    <a href="#arch">Architecture</a>
+    <a href="#quick">Quick Start</a>
+    <a href="#demo">Demo</a>
+    <a href="#scripts">Scripts</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#stats">Stats</a>
+    <a href="#burmese">Burmese</a>
+  </div>
+
+  <div class="markdown-body">
+
+    <p class="center">
+      <strong style="font-size: 1.6em;">🪬 n8n Agent Skills by KMN</strong><br>
+      <em style="color: #59636e;">Production-grade Cursor Agent Skills for Claude · Telegram · RSS · Docker · Cloudflare Tunnel</em>
+    </p>
+
+    <p class="center">
+      <a href="#-what-is-this"><img src="https://img.shields.io/badge/version-1.0.0-ff6d5a?style=for-the-badge&logo=github&logoColor=white" alt="version"/></a>
+      <a href="#"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="license"/></a>
+      <a href="#"><img src="https://img.shields.io/badge/setup-60s-3b82f6?style=for-the-badge&logo=rocket&logoColor=white" alt="setup"/></a>
+      <a href="#"><img src="https://img.shields.io/badge/scripts-4-a855f7?style=for-the-badge&logo=node.js&logoColor=white" alt="scripts"/></a>
+    </p>
+
+    <p class="center">
+      <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
+      <img src="https://img.shields.io/badge/Cursor-000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor"/>
+      <img src="https://img.shields.io/badge/Claude-Sonnet_5-CC785C?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude"/>
+      <img src="https://img.shields.io/badge/OpenAI-GPT-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+      <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+      <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare"/>
+      <img src="https://img.shields.io/badge/Myanmar-မြန်မာ-FFD700?style=for-the-badge" alt="Myanmar"/>
+    </p>
+
+    <p class="center"><em>(Above are real shields.io badges - GitHub will render them as gradient colored chips with logos.)</em></p>
+
+    <hr id="what" />
+
+    <h2>🪬 What is this?</h2>
+    <blockquote>
+      <strong>A drop-in Cursor Agent Skill that turns any LLM into an expert n8n workflow builder.</strong>
+    </blockquote>
+
+    <p>Built from <strong>8 production workflows</strong>, <strong>50+ scripts</strong>, and an <strong>18,070-template reference library</strong>.</p>
+
+    <div class="grid">
+      <div class="card"><strong>📦 <code>SKILL.md</code></strong> (236 lines)<br>Burmese-first knowledge base</div>
+      <div class="card"><strong>📚 <code>references/*.md</code></strong> (4 files)<br>728 nodes · 15 patterns · Telegram · Security</div>
+      <div class="card"><strong>🧰 <code>scripts/*.cjs</code></strong> (4 scripts)<br>Builder · Validator · Auditor · Bot-metadata</div>
+      <div class="card"><strong>📝 <code>examples/*.json</code></strong> (2 files)<br>Chat + scheduled channel templates</div>
+    </div>
+
+    <p>🟢 <strong>Zero dependencies</strong> · Node.js 20+ · 100% local-first</p>
+
+    <hr id="arch" />
+
+    <h2>🏗️ Architecture</h2>
+    <div class="ascii">
+                          ┌─────────────────────────────────────┐
+                          │   Cursor Agent (Claude / GPT)       │
+                          │   ┌───────────────────────────────┐ │
+                          │   │  n8n-myanmar-workflow-builder  │ │
+                          │   │          SKILL.md              │ │
+                          │   └───────────────┬───────────────┘ │
+                          └───────────────────│─────────────────┘
+                                              │ generates JSON
+                                              ▼
+              ┌────────────────────────────────────────────────────┐
+              │              n8n (Docker, localhost:5678)          │
+              │  ┌──────────────┐ ┌──────────────┐ ┌────────────┐  │
+              │  │ Chat Trigger │ │ Telegram Bot │ │ Scheduler  │  │
+              │  └──────┬───────┘ └──────┬───────┘ └─────┬──────┘  │
+              │         ▼                ▼               ▼         │
+              │  ┌──────────────┐ ┌──────────────┐ ┌────────────┐  │
+              │  │ Claude Agent │ │  RSS Ingest  │ │  History   │  │
+              │  │   + Memory   │ │  + Dedupe    │ │  Guard     │  │
+              │  └──────┬───────┘ └──────┬───────┘ └─────┬──────┘  │
+              │         ▼                ▼               ▼         │
+              │  ┌────────────────────────────────────────────────┐ │
+              │  │       Reserve → Send → Confirm pattern        │ │
+              │  └────────────────────────────────────────────────┘ │
+              └─────────────────┬──────────────────┬────────────────┘
+                                │                  │
+                                ▼                  ▼
+                    ┌──────────────────┐  ┌────────────────────┐
+                    │  Telegram Bot    │  │  Telegram Channel  │
+                    │   (user reply)   │  │  (broadcast post)  │
+                    └──────────────────┘  └────────────────────┘
+    </div>
+
+    <hr id="quick" />
+
+    <h2>⚡ Quick Start (60 seconds)</h2>
+    <h3>Step 1 — Install</h3>
+    <pre><code>mkdir -p .cursor/skills
+git clone https://github.com/mymyanmarland/n8n-agent-skills-by-kmn.git /tmp/kmn-skill
+cp -r /tmp/kmn-skill/n8n-myanmar-workflow-builder .cursor/skills/
+rm -rf /tmp/kmn-skill</code></pre>
+
+    <h3>Step 2 — Restart Cursor</h3>
+    <p><code>Ctrl/Cmd + Shift + P</code> → "Reload Window"</p>
+
+    <h3>Step 3 — Try it</h3>
+    <blockquote>
+      <span class="label bg-mm">🇲🇲 Burmese</span> "Telegram trigger bot တစ်ခု လုပ်ပေးပါ - Claude သုံးပြီး မြန်မာလို reply ပြန်၊ ၃၅၀၀ လိုင်း safe chunking ပါစေ"
+    </blockquote>
+
+    <hr id="demo" />
+
+    <h2>🎬 Demo</h2>
+    <p style="border: 2px dashed #d0d7de; padding: 24px; text-align: center; border-radius: 12px; background: #f6f8fa;">
+      🎥 <em>Terminal-recorded GIF placeholder</em><br>
+      <small>Record with <code>npx asciinema rec demo.cast</code> → convert to GIF → save to <code>docs/demo.gif</code></small>
+    </p>
+
+    <hr id="scripts" />
+
+    <h2>🧰 Scripts</h2>
+    <table>
+      <tr><th>Script</th><th>Purpose</th><th>Example</th></tr>
+      <tr><td><code>build-workflow.cjs</code></td><td>Generate workflow JSON</td><td><code>--template chat-telegram --name "My bot"</code></td></tr>
+      <tr><td><code>validate-workflow.cjs</code></td><td>Schema + best-practice checks</td><td><code>validate my-workflow.json</code></td></tr>
+      <tr><td><code>audit-credentials.cjs</code></td><td>Scan for hardcoded secrets</td><td><code>audit-credentials .</code></td></tr>
+      <tr><td><code>check-telegram-channel.cjs</code></td><td>Bot metadata (no token print)</td><td><code>--me</code> or <code>--channel @x</code></td></tr>
+    </table>
+
+    <hr id="patterns" />
+
+    <h2>🎯 What it builds</h2>
+    <table>
+      <tr><th>Pattern</th><th>Flow</th><th>Use case</th></tr>
+      <tr><td><b>A. Chat assistant</b></td><td><code>Chat Trigger → Claude Agent + Memory → reply</code></td><td>Multilingual chatbot</td></tr>
+      <tr><td><b>B. Telegram trigger bot</b></td><td><code>Telegram → If text → Claude → HTML-escape → chunk → Reply</code></td><td>Burmese Telegram bot</td></tr>
+      <tr><td><b>C. Scheduled channel post</b></td><td><code>Schedule → history check → LLM → validate → Telegram → mark sent</code></td><td>Daily digest</td></tr>
+      <tr><td><b>D. RSS aggregation</b></td><td><code>Schedule → 5+ RSS → loop → dedupe → Claude → Telegram</code></td><td>News digest</td></tr>
+      <tr><td><b>E. Job board scraper</b></td><td><code>80 searches → normalize → reserve → Claude → Telegram → mark sent</code></td><td>Job alerts</td></tr>
+    </table>
+
+    <hr id="stats" />
+
+    <h2>📊 Real-world usage data</h2>
+    <p>From a scan of <strong>18,070 importable n8n templates</strong>:</p>
+    <details>
+      <summary>📈 Top 11 nodes</summary>
+      <table>
+        <tr><th>Node</th><th>Count</th></tr>
+        <tr><td><code>stickyNote</code></td><td align="right">90,493</td></tr>
+        <tr><td><code>stopAndError</code></td><td align="right">30,475</td></tr>
+        <tr><td><code>httpRequest</code></td><td align="right">21,727</td></tr>
+        <tr><td><code>set</code></td><td align="right">21,607</td></tr>
+        <tr><td><code>code</code></td><td align="right">12,032</td></tr>
+        <tr><td><code>if</code></td><td align="right">10,739</td></tr>
+        <tr><td><code>googleSheets</code></td><td align="right">8,754</td></tr>
+        <tr><td><code>agent</code> (LangChain)</td><td align="right">6,711</td></tr>
+        <tr><td><code>lmChatOpenAi</code></td><td align="right">5,831</td></tr>
+        <tr><td><code>telegram</code></td><td align="right">4,111</td></tr>
+        <tr><td><code>scheduleTrigger</code></td><td align="right">3,605</td></tr>
+      </table>
+    </details>
+
+    <hr id="burmese" />
+
+    <h2>🪄 Burmese (မြန်မာ) section</h2>
+    <details>
+      <summary>📖 ဤ repo အကြောင်း (နှိပ်ပြီး ဖွင့်ပါ)</summary>
+      <p>ဒီ repo က <strong>Cursor Agent Skill</strong> ပါ။ n8n workflow တွေကို Claude / OpenAI / Telegram / RSS / Data Table တွေနဲ့ တည်ဆောက်ဖို့ expert knowledge ပါပါတယ်။</p>
+      <ul>
+        <li>✨ <strong>Real production workflows</strong> ၈ ခုကနေ pattern ထုတ်ထားပါတယ်</li>
+        <li>🇲🇲 <strong>Burmese-first</strong> documentation (English technical terms ထိန်းသိမ်းထား)</li>
+        <li>🔐 <strong>Secret-safe</strong>: API key / bot token / encryption key ဘယ်နေရာမှာမှ မရေးပါ</li>
+        <li>🐳 <strong>Local Docker + n8n</strong> stack အတွက် အကောင်းဆုံး fit</li>
+        <li>🌐 <strong>Cloudflare quick-tunnel</strong> + nginx gateway pattern</li>
+      </ul>
+    </details>
+
+    <hr />
+
+    <p class="center"><em>Made with ❤ for the Myanmar developer community and anyone running local-first AI automation.</em></p>
+
+  </div>
+</body>
+</html>
